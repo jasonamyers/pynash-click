@@ -3,7 +3,7 @@ import click
 @click.command()
 @click.option('--french', default=False, help='Use French', is_flag=True)
 @click.argument('name')
-def hello(name, french):
+def hello(french, name):
     if french:
         click.echo('Bonjour {}'.format(name))
     else:

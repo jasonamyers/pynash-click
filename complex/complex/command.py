@@ -83,10 +83,12 @@ def composite(ctx):
 @click.argument('name')
 @click.option('--repo', '-r', multiple=True, help='A repo to include in the '
               'composite')
+@click.option('--priority', '-p', multiple=True, type=int,
+              help='A repo to include in the composite')
 @click.option('--base', '-b', is_flag=True, help='Mark this composite as a '
               'base', default=False)
 @click.pass_context
-def composite_create(ctx, name, repo, base):
+def composite_create(ctx, name, repo, priority, base):
     """Create subcommand for the composite group
     """
     logger.debug('Creating composite: %s', name)

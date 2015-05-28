@@ -1,7 +1,7 @@
 import click
 
 @click.command()
-@click.argument('name')
+@click.argument('name', type=str)
 def hello(name):
     click.echo('Hello {}'.format(name))
 
