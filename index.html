@@ -85,12 +85,12 @@
 			</section>
                         <section>
                           <h2>How bad is it?</h2>
-                          <ol>
+                          <ul>
                             <li>docopt</li>
                             <li>Plac</li>
                             <li>Cliff</li>
                             <li>Clint</li>
-                          </ol>
+                          </ul>
 			</section>
                         <section>
                           <pre><code data-trim>import sys
@@ -98,10 +98,102 @@ if __name__ == "__main__":
      main(sys.argv)</code></pre>
                         </section>
                       </section>
+                      <section>
 			<section>
 			  <img src="click.png" />
 			</section>
+                        <section>
+                          <h2>Demo</h2>
+                        </section>
+                      </section>
+                      <section>
+                        <section>
+                          <h2>Logging</h2>
+                        </section>
+                        <section>
+                          <h2>Good Logging Messages</h2>
+                          <ul>
+                            <li>Time</li>
+                            <li>Module</li>
+                            <li>Level</li>
+                            <li>Parseable Messages</li>
+                          </ul>
+                        </section>
+                        <section>
+                          <pre>2015-05-28 09:25:18,711 - complex.logger - DEBUG - Creating composite: cookies
+2015-05-28 09:25:18,711 - complex.logger - DEBUG - Created composite: cookies</pre>
+                        </section>
+                        <section>
+                          <h2>JAM's Logging Style</h2>
+                        </section>
+                        <section>
+                          <pre><code data-trim>import logging
 
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.ERROR)
+                          </code></pre>
+                        </section>
+                        <section>
+                          <pre><code data-trim>file_log_handler = logging.FileHandler('complex-cli.log')
+logger.addHandler(file_log_handler)
+
+stderr_log_handler = logging.StreamHandler()
+logger.addHandler(stderr_log_handler)
+                          </code></pre>
+                        </section>
+                        <section>
+                          <pre><code data-trim>format_string = '%(asctime)s - %(name)s - ' \
+                '%(levelname)s - %(message)s'
+formatter = logging.Formatter(format_string)
+file_log_handler.setFormatter(formatter)
+stderr_log_handler.setFormatter(formatter)
+                              </code></pre>
+                        </section>
+                      </section>
+                      <section>
+                        <section>
+                          <h2>Packaging</h2>
+                        </section>
+                        <section>
+                          <h2>Find our module</h2>
+                          <pre><code data-trim>from setuptools import setup, find_packages
+
+setup(
+    name='complex',
+    version='0.1.2',
+    packages=find_packages(),
+    include_package_data=True,
+                          </code></pre>
+                        </section>
+                        <section>
+                          <pre><code data-trim>    install_requires=[
+        'Click==3.3',
+    ],
+                          </code></pre>
+                        </section>
+                        <section>
+                          <pre><code>    description='A description',
+    classifiers=[
+        'License :: OSI Approved :: BSD License',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 3',
+    ],
+                          </code></pre>
+                        </section>
+                        <section>
+                          <pre><code>    entry_points='''
+    [console_scripts]
+    complex=complex.command:cli
+    '''
+)
+                          </code></pre>
+                        </section>
+                      </section>
+                      <section>
+                        <h2>Complex Demo</h2>
+                      </section>
+                      
+                        
 			            </div>
 
 		                  </div>

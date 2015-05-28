@@ -6,3 +6,14 @@ node_modules/
 .sass-cache
 css/reveal.min.css
 js/reveal.min.js
+
+*.pyc
+*.pyo
+*.egg-ignore
+*.egg-info
+dist
+build
+docs/_build
+.tox
+.idea
+*.log
