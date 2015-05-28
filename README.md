@@ -7,12 +7,12 @@
 
 4. Clone the repository
    ```sh
-   $ git clone https://github.com/jasonamyers/coderfaire-net-neutrality.git
+   $ git clone https://github.com/jasonamyers/pynash-click.git
    ```
 
 5. Navigate to the repo folder
    ```sh
-   $ cd coderfair-net-neutrality
+   $ cd pynash-click
    ```
 
 6. Install dependencies
